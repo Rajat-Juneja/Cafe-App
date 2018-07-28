@@ -1,0 +1,16 @@
+div.footer{
+    background: #111!important;
+    color: white;
+}
+
+div.footer div.row{
+    width: 100%;
+}
+
+div.footer div.container{
+    padding: 2% 1%;
+}
+
+div.footer div.tags{
+    display: inline-block;
+}

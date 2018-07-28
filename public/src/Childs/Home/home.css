@@ -1,0 +1,22 @@
+h4{
+    color: #5F3600;
+    font-weight: 700;
+    line-height: 40px;
+    font-size: 28px;
+}
+
+h4:last-of-type{
+    margin-top: 0.5%;
+    margin-bottom: 2%;
+}
+
+h6{
+    margin-bottom: 2.5%;
+    font-size: 18px;
+    line-height: 28px;
+}
+
+div.home{
+    text-align: center;
+    margin-top: 5%;
+}

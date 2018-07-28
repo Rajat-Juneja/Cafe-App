@@ -1,0 +1,27 @@
+li{
+    margin: 0 7.5%;
+}
+
+ul.navbar-nav{
+    width: 100%;
+}
+
+li a, li.active a{
+    color:white !important;
+    font-weight: 900;
+    font-size: 24px;
+}
+
+div.collapse{
+    background-color: #191919; 
+    opacity: 0.8; 
+    padding: 0.5% 0;
+}
+
+a.colorChange{
+    border-bottom: 4px solid white; 
+}
+
+nav{
+    height: 100%;
+}
