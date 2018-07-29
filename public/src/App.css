@@ -5,3 +5,8 @@ div.bg{
     background-size: cover;
     height: 225px;
 }
+
+div.bg + div.container{
+    min-height:235px;
+    padding: 3.5% 0;  
+}
