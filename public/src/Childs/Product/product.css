@@ -1,0 +1,18 @@
+img.mr-3{
+    width: 35%;
+}
+
+div.product p.dull{
+    color: gray;
+}
+
+div.product p.bright{
+    color: brown;
+    font-weight: 900;
+}
+
+div.product h3{
+    color: #5F3600;
+    font-weight: 700;
+    line-height: 40px;
+} 

@@ -1,8 +1,7 @@
-export const reducer = (state={},acton) =>{
-    // if(action.type=="ADD"){
-    //     let answer = action.payLoad.first + action.payLoad.second;
-    //     state={...state,result:answer};
-    //     return state;
-    // }
+export const reducer = (state={},action) =>{
+    if(action.type=='DataGetter'){
+        console.log("Inside reducer");
+        return {...state,data:action.payLoad.data}
+    }
     return state;
 };

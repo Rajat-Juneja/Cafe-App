@@ -22,7 +22,7 @@ export const Header = () =>{
                         <NavLink activeClassName="colorChange" className="nav-link" to="/feedback">Feedback</NavLink>
                     </li>
                     <li className="nav-item">
-                        <NavLink activeClassName="colorChange" className="nav-link" to="/contact">Contact</NavLink>
+                        <NavLink activeClassName="colorChange" className="nav-link" to="/editmenu">Admin?</NavLink>
                     </li>
                 </ul>
             </div>

@@ -1,13 +1,14 @@
 import React,{Component} from 'react';
 import './feedback.css';
 import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import {Store} from '../../Models/Store';
 
 export default class Feedback extends Component{
     constructor(){
         super();
         this.disabled=true;
         this.class="curse";
-        this.state={isGood1:false,isGood2:false,isGood3:false};
+        this.state={isGood1:false,isGood2:false,isGood3:false,object:{}};
     }
     checkVal(event){
         var toCheck = event.target.attributes.getNamedItem('myvalue').value;
@@ -16,31 +17,29 @@ export default class Feedback extends Component{
             if(value.match(/^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$/g) && value)
             {
                 event.target.classList.remove('red');
-                this.setState({...this.state,isGood1:true},()=>{this.checkState();});
+                this.setState({...this.state,isGood1:value},()=>{this.checkState();});
             }
             else{
                 event.target.classList.add('red');
                 this.setState({...this.state,isGood1:false},()=>{this.checkState();});
             }
-            console.log(this.state);
         }
         else 
         if(toCheck=='email'){
             if(value.match(/^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/) && value){
                 event.target.classList.remove('red');
-                this.setState({...this.state,isGood2:true},()=>{this.checkState();});
+                this.setState({...this.state,isGood2:value},()=>{this.checkState();});
             }
             else{
                 event.target.classList.add('red');
                 this.setState({...this.state,isGood2:false},()=>{this.checkState();});
             }
-            console.log(this.state);
         }
         else 
         if(toCheck=='sugg'){
             if(value){
                 event.target.classList.remove('red');
-                this.setState({...this.state,isGood3:true},()=>{this.checkState();});
+                this.setState({...this.state,isGood3:value},()=>{this.checkState();});
             }
             else{
                 event.target.classList.add('red');
@@ -54,13 +53,31 @@ export default class Feedback extends Component{
         if(this.state.isGood1 && this.state.isGood2 && this.state.isGood3){
         this.disabled=false;
             this.class="";
-            this.setState({...this.state}); 
+            var Obj={};
+            Obj.name=this.state.isGood1;
+            Obj.email = this.state.isGood2;
+            Obj.message = this.state.isGood3;
+            this.setState({...this.state,object:Obj}); 
         }
         else{
             this.disabled=true;
             this.class="curse";
             this.setState({...this.state});
         }
+    }
+    doAjax(){
+        fetch('/feedback',{
+            method: 'POST', // or 'PUT'
+            body: JSON.stringify(this.state.object), // data can be `string` or {object}!
+            headers:{
+              'Content-Type': 'application/json'
+            }
+        }).then(response=>{   
+       response.json().then(data=>{
+           }).catch(err=>console.log("Error in Ajax Call"));
+       }).catch(err=>{
+           console.log("Error in Server Call ",err);
+       });
     }
     render(){
         return(
@@ -78,7 +95,7 @@ export default class Feedback extends Component{
             <br/>
             </div>
             <div className="col-sm-12 col-12">
-            <button disabled={this.disabled} className={this.class}>Submit</button>
+            <button disabled={this.disabled} className={this.class} onClick={this.doAjax.bind(this)}>Submit</button>
             </div>
             </form>
             </div>
