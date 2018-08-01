@@ -7,15 +7,15 @@ function SendMail(message){
         var transporter = nodemailer.createTransport({
             service: 'gmail',
             auth: {
-                   user: '1804rajat@gmail.com',
-                   pass: 'tataphoton'
+                   user: '****@gmail.com',
+                   pass: '****'
                }
            });
     
         // setup email data with unicode symbols
         let mailOptions = {
-            from: '"Developers " <1804rajat@gmail.com>', // sender address
-            to: 'junejarajat98@gmail.com', // list of receivers
+            from: '"Developers " <****@gmail.com>', // sender address
+            to: '****@gmail.com', // list of receivers
             subject: "Customer Feedback/Suggestion/Complaint", // Subject line
             text: message // plain text body
             // html: '<b>Hello world?</b>' // html body
