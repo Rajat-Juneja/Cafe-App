@@ -21,7 +21,6 @@ export class Product extends Component{
             console.log(err)});
     }
     checkQuant(type){
-        console.log(type);
         if(type=='solid'){
             this.setState({...this.state,unit:'gm'});
         }

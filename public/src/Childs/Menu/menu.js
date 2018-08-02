@@ -9,6 +9,7 @@ var results=[];
 class Menu extends Component{
 constructor(props){
     super(props);
+    this.props=props;
     // this.error=true;
     // this.state={result:{}};
 }
@@ -16,7 +17,7 @@ componentDidMount(){
     Store.dispatch(AsyncAJAX('DataGetter'));
 }
 render(){
-    while(!results.length){
+    while(!this.props.result){
         return(
             <div className="comp">
                 <img src={require("../../images/loader.gif")} alt="Loading"/>
@@ -25,7 +26,7 @@ render(){
 }
 return(
     <div>
-        <MenuData data={results}></MenuData>
+        <MenuData data={this.props.result}></MenuData>
     </div>
 )
 }
@@ -38,7 +39,7 @@ return(
 const mapStateToProps=(state)=>{
     if(state.data){
         let mainResult=state.data;
-        results=mainResult;
+        // results=mainResult;
         return {result:mainResult}
     }
     return {}

@@ -8,6 +8,8 @@ import {Home} from './Childs/Home/home';
 import Feedback from './Childs/Feedback/feedback';
 import Menu from './Childs/Menu/menu';
 import {Product} from './Childs/Product/product';
+import Login from './Childs/Login/login';
+import Edit from './Childs/Edit/editProds';
 
 export default class MainComponent extends Component{
     constructor(){
@@ -26,7 +28,9 @@ export default class MainComponent extends Component{
                     <Route path="/menu" exact component={Menu}></Route>
                     <Route path="/feedback" exact component={Feedback}></Route>
                     <Route path="/product/:name" exact component={Product}></Route>
-                    {/* <Route path="/editmenu" exact component={Feedback}></Route> */}
+                    <Route path="/login" exact component={Login}></Route>
+                    <Route path="/editmenu" exact component={Edit}></Route>
+                    <Redirect from="/update" to="/editmenu"></Redirect>
                     <Redirect to="/home"></Redirect>
                 </Switch>
                 </div>

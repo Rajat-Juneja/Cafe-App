@@ -7,8 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon index.js",
     "server": "nodemon index.js",
-    "public":"npm start --prefix public",
-    "dev":"concurrently \"npm run server\" \"npm run public\""
+    "public": "npm start --prefix public",
+    "dev": "concurrently \"npm run server\" \"npm run public\""
   },
   "author": "",
   "license": "ISC",
@@ -19,6 +19,7 @@
     "jsonwebtoken": "^8.3.0",
     "log4js": "^3.0.2",
     "mongoose": "^5.2.5",
+    "multer": "^1.3.1",
     "nodemailer": "^4.6.7",
     "nodemon": "^1.18.3"
   }

@@ -5,13 +5,13 @@ log4js.configure({
     appenders:{
         debug:{
             type:'file',
-            filename:'../logs/debug.log',
+            filename:'./logs/debug.log',
             category:'debug',
             maxLogsize: 20480 // in bytes
         },
         error:{
             type:'file',
-            filename:'../logs/error.log',
+            filename:'./logs/error.log',
             category:'error',
             maxLogsize: 20480
         }

@@ -6,6 +6,7 @@ import './menu.css';
 export class MenuData extends Component{
 constructor(props){
     super(props);
+    this.props=props;
     this.state={redirect:''};
     this.class='';
 }

@@ -22,6 +22,10 @@ div.comp{
     text-align: center;
 }
 
+div.row div.col-12{
+    margin-bottom: 5%;
+}
+
 div.row div.col-12 div.box{
     cursor: pointer;
 }

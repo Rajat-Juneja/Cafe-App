@@ -1,0 +1,8 @@
+div.login{
+    text-align: center;
+}
+
+input.inp{
+    border: none;
+    border-bottom: 1px solid gray;
+}

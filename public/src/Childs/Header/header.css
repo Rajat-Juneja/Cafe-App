@@ -4,6 +4,7 @@ li{
 
 ul.navbar-nav{
     width: 100%;
+    z-index: 9999;
 }
 
 li a, li.active a{

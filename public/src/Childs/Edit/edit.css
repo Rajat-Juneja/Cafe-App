@@ -1,0 +1,61 @@
+div.edit div.img{
+    position: relative;
+}
+
+div.edit div.img label.remove{
+    position: absolute;
+    right: 10%;
+    top: 5%;
+    z-index: 9;
+    text-align: right;
+}
+
+h2.fire{
+    color: red;
+    font-weight: 700;
+    text-align: center;
+}
+
+div.edit div.box label{
+    width: 100%;
+}
+
+div.edit div.box label input{
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid rgba(0,0,0,0.5);
+}
+
+div.edit div.box input[type="submit"]{
+    margin-left: 45%;
+    transform: translate(-50%);
+    border-radius: 5px;
+    border:none;
+    padding: 1.75% 4%;
+    font-weight: 700;
+}
+
+div.edit div.box label input[type="radio"]{
+    width: 20%;
+}
+
+div.edit label.remove input{
+    opacity: 0;
+    display: none;
+}
+
+div.edit div.img i.fa-pencil{
+    cursor: pointer;
+    font-size: 24px;
+    width: 30px !important;
+    text-align: center;
+    height: 30px;
+    border-radius: 3px;
+    background: rgba(0,0,0,0.5);
+    color: white !important;
+    z-index: 9999;
+}
+
+div.edit div.col-12 div.box{
+    cursor: auto;
+}
